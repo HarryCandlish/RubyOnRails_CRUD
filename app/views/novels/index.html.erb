@@ -1,14 +1,21 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Novels</h1>
 
-<div id="novels">
+<table class="table">
+<thead>
+  <tr>
+    <th scope="col">Author</th>
+      <th scope="col">Title</th>
+    <th scope="col">Handle</th>
+  </tr>
+</thead>
+<tbody>
   <% @novels.each do |novel| %>
-    <%= render novel %>
-    <p>
-      <%= link_to "Show this novel", novel %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New novel", new_novel_path %>
+      <tr>
+        <td><%= novel.author %></td>
+          <td><%= novel.title %></td>
+        <td><%= novel.description %></td>
+    </tr>
+  </tbody>
+<% end %>
+</table>
+<%= link_to 'Add Novel', new_novel_path, class:"btn btn-secondary" %>
