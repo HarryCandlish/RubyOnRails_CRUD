@@ -1,21 +1,27 @@
 
 
-<table class="table">
-<thead>
+<table class="table table-striped table-hover table-bordered">
+<thead class="table-dark">
   <tr>
     <th scope="col">Author</th>
       <th scope="col">Title</th>
-    <th scope="col">Handle</th>
+    <th scope="col">Description</th>
   </tr>
 </thead>
 <tbody>
   <% @novels.each do |novel| %>
       <tr>
-        <td><%= novel.author %></td>
-          <td><%= novel.title %></td>
-        <td><%= novel.description %></td>
+        <td>
+          <%= novel.author %>
+        </td>
+        <td><%= novel.title %>
+        </td>
+        <td>
+        <%= novel.description %>
+        </td>
     </tr>
   </tbody>
 <% end %>
 </table>
+<br>
 <%= link_to 'Add Novel', new_novel_path, class:"btn btn-secondary" %>

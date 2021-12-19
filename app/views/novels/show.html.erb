@@ -1,10 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<div class="card" style="width: 18rem;">
 
-<%= render @novel %>
+<h1 class="display-4">
+<strong> <%= @novel.author %> </strong>
+<%= @novel.title %>
+</h1>
+<p class="lead">
+<%= @novel.description %>  | 
 
-<div>
-  <%= link_to "Edit this novel", edit_novel_path(@novel) %> |
-  <%= link_to "Back to novels", novels_path %>
+</p>
+<br/>
 
-  <%= button_to "Destroy this novel", @novel, method: :delete %>
+
+
+<div >
+  <%= link_to "Edit this novel", edit_novel_path(@novel), class:"btn btn-secondary" %> |
+  <%= link_to "Back to novels", novels_path, class:"btn btn-secondary" %>
+  <br>
+  <%= button_to "Destroy this novel", @novel, method: :delete, class:"btn btn-secondary" %>
 </div>
